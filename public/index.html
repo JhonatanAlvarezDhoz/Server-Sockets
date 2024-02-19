@@ -21,11 +21,22 @@
             console.log("Disconnect to server")
         })
 
+        client.on("active-bands", (bands) => {
+            console.clear()
+            console.table(bands)
+        })
+
         client.emit('message', {nombre: 'Jota'});
 
-        client.on("message", (payload) =>{
-            console.log("Listening: ", payload)
+        // client.on("message", (payload) =>{
+        //     console.log("Listening: ", payload)
+        // })
+
+        client.on("flutter", (payload) =>{
+            console.log( payload)
         })
+
+       
     </script>
 </body>
 </html>
